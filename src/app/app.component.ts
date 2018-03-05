@@ -60,7 +60,7 @@ export class AppComponent implements OnInit{
         let result:any = [];
         if (localStorage.getItem('citiesObj') != "[]" && localStorage.getItem('citiesObj') != null) {
             let storedData = JSON.parse(localStorage.getItem('citiesObj'));
-            storedData.forEach ((city:any) => {this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(city.name).replace(' ', '+')+"&units=metric&APPID=7d4a513295ab7cdbda0f5e3b9c6adea5").toPromise()
+            storedData.forEach ((city:any) => {this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(city.name).replace(' ', '+')+"&units=metric&APPID=7c22ec03e7734014a2dc785cdd6b37af").toPromise()
                 .then(function(res: Response) { 
                     result.push(oneRowBuild (res.json(), city.goingToVisite, city.visited));
                 })
@@ -70,7 +70,7 @@ export class AppComponent implements OnInit{
             }); 
         }
         else {
-            cities.forEach ((city:any) => {this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(city).replace(' ', '+')+"&units=metric&APPID=7d4a513295ab7cdbda0f5e3b9c6adea5").toPromise()
+            cities.forEach ((city:any) => {this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(city).replace(' ', '+')+"&units=metric&APPID=7c22ec03e7734014a2dc785cdd6b37af").toPromise()
                 .then(function(res:any) { 
                     result.push(oneRowBuild(res.json(), "", ""));
                 })
@@ -111,7 +111,7 @@ export class AppComponent implements OnInit{
             this.message = "Please enter city.";
         }
         else {
-            let res = this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(newCity).replace(' ', '+')+"&units=metric&APPID=7d4a513295ab7cdbda0f5e3b9c6adea5").toPromise()
+            let res = this.http.get("http://api.openweathermap.org/data/2.5/weather?q="+(newCity).replace(' ', '+')+"&units=metric&APPID=7c22ec03e7734014a2dc785cdd6b37af").toPromise()
             .then(function(response: Response) { 
                 let parsesResponse = response.json();
                 let oneRow = {name: parsesResponse.name,
