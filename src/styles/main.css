@@ -15,7 +15,7 @@ body {
     height: 100%;
     transition: all linear 3s;
     transition-property: background-image;
-    background-size: cover;
+    background-size: contain;
 }
 #main-info {
     width: 875px;
