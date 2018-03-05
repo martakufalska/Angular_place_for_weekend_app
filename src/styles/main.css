@@ -1,0 +1,150 @@
+@import 'fonts.css';
+@import url('https://fonts.googleapis.com/css?family=Share:400,400i,700,700i');
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    color: white;
+}
+#page-background {
+    width: 100%;
+    height: 100%;
+    transition: all linear 3s;
+    transition-property: background-image;
+    background-size: cover;
+}
+#main-info {
+    width: 875px;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba( 0,0,0, 0.7);
+    font-family: 'Share', cursive;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    justify-content: center;
+    margin: 0 50px;
+    padding: 30px 0;
+}
+
+h1 {
+    width: 100%;
+    line-height: 1.1;
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+}
+
+.capital-let {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.header-icon {
+    font-size: 30px;
+    margin: 0 10px;
+}
+
+.icon-display {
+    display: inline-block;
+}
+
+.header-line {
+    width: 194px;
+    border-top: solid;
+    display: inline-block;
+    height: 14px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+#btn-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    color: #FFF;
+    background-color: rgba(108, 239, 202, 0.85);
+    border: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.04rem;
+    width: 120px;
+    height: 40px;
+    margin-top: 0.7rem;
+    border-radius: 10px;
+    font-family: 'Share', cursive;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover { background-color: rgba(108, 239, 202, 1);}
+
+table {
+    overflow: auto;
+    width: 776px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    border-spacing: 0;
+    text-align: center;
+}
+
+thead {
+    display: block;
+	width: 776px;
+	overflow: auto;
+}
+
+tbody {
+    display: block;
+	width: 776px;
+    overflow: auto;
+    height: 50%;
+}
+
+th {
+    height: 50px;
+    width: 152.2px;
+    border-bottom: 1px solid #fff;
+    background-color: rgba(108, 239, 202, 0.5);
+    padding: 10px;
+    cursor: pointer;
+}
+
+td {
+    width: 152.2px;
+    height: 30px;
+}
+
+th:hover {background-color: rgba(108, 239, 202, 0.3);}
+tr:hover {background-color: rgba(108, 239, 202, 0.3);}
+
+th:last-child {
+    width: 178.2px;
+    padding-right: 26px;
+}
+td:last-child {
+    width: 26px;
+    border-bottom: none;
+    padding: 10px 0;
+    background: none !important;
+}
+
+.city-delete {
+    color: #fff;
+    padding-right: 5px;
+}

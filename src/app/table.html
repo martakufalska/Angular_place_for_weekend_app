@@ -1,0 +1,80 @@
+<div id = "page-background" [style.background-image]="currentImg">
+<div id="main-info"> 
+    <section>
+        <header>
+            <h1> Choose the best place <br> <span class="capital-let">for your weekend</span></h1>
+            <div class="header-line"></div> 
+            <div class="icon-display"> <i class="fas fa-caret-down header-icon"></i> </div>
+            <div class="header-line"></div>
+        </header>
+        <!-- Trigger/Open The Modal -->
+        <div id = "btn-wrapper" >
+            <button id="addCity" (click)="display=displayBlock" class="btn">Add city</button>
+            <button id="default" (click)="refreshTable()" class="btn">Default parameters</button>
+        </div>
+
+        <table id="cityTable">
+            <thead>
+                <tr>
+                    <th (click)="reverseOrder('name');">
+                        Capital
+                        <span class="fa fa-caret-up" *ngIf="reverse === true && order === 'name'"></span>
+                        <span class="fa fa-caret-down" *ngIf="reverse === false && order === 'name'"></span>
+                    </th>
+                    <th (click)="reverseOrder('temperature')">
+                        Temperature (°C)
+                        <span class="fa fa-caret-up" *ngIf="reverse === true && order === 'temperature'"></span>
+                        <span class="fa fa-caret-down" *ngIf="reverse === false && order === 'temperature'"></span>
+                    </th>
+                    <th (click)="reverseOrder('condition')">
+                        Weather condition
+                        <span class="fa fa-caret-up" *ngIf="reverse === true && order === 'condition'"></span>
+                        <span class="fa fa-caret-down" *ngIf="reverse === false && order === 'condition'"></span>
+                    </th>
+                    <th (click)="reverseOrder('goingToVisite')">
+                        Going to visit
+                        <span class="fa fa-caret-up" *ngIf="reverse === true && order === 'goingToVisite'"></span>
+                        <span class="fa fa-caret-down" *ngIf="reverse === false && order === 'goingToVisite'"></span>
+                    </th>
+                    <th (click)="reverseOrder('visited')" colspan="2">
+                        Visited
+                        <span class="fa fa-caret-up" *ngIf="reverse === true && order === 'visited'"></span>
+                        <span class="fa fa-caret-down" *ngIf="reverse === false && order === 'visited'"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let city of citiesParam | orderBy: order: reverse; let index = index;" id={{city.name}}>
+                    <td> {{city.name}}</td>
+                    <td>{{city.temperature}}</td>
+                    <td>{{city.condition}}</td>
+                    <td>
+                        <input type="checkbox" id={{city.name}} checked={{city.goingToVisite}} name="goingToVisite" (change)="checkBoxChange($event)">
+                    </td>
+                    <td> 
+                        <input type="checkbox" id={{city.name}} checked={{city.visited}} name="visited" (change)="checkBoxChange($event)">
+                    </td>
+                    <td>
+                        <span><i class="far fa-window-close city-delete" (click)="deleteCity($event)"></i></span>
+                    </td>
+                </tr>
+                {{minMaxTempBackground()}}
+            </tbody>
+        </table>
+    </section>
+    <aside>
+        <div id="modalAdd" class="modal" [style.display]="display">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span id="close"><i class="far fa-window-close" (click)="display=displayNone;"></i></span>
+                <h2>Add new city</h2>
+                <label for="city">Please enter city name:</label>
+                <input type="text" name="city" #newCity (change)="ncity = newCity.value">
+                <button id="modal-btn" class ="btn" (click)="modalBoxAdd(newCity.value)">Add</button>
+                <p id="error" [style.color]="messageColor">{{message}} </p>
+            </div>
+        </div>
+    </aside>
+ </div>
+</div>
+

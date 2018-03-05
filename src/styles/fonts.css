@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Lato";
+    src: url('https://fonts.googleapis.com/css?family=Roboto') format("truetype");
+}
+@font-face {
+    font-family: "Lato-bold";
+    src: url("https://fonts.googleapis.com/css?family=Roboto:700") format("truetype");
+}
+@font-face {
+    font-family: "Lato-Black";
+    src: url("https://fonts.googleapis.com/css?family=Roboto:900") format("truetype");
+}
